@@ -1,0 +1,31 @@
+@startuml
+interface Cor {
+    + aplicarCor(): void
+}
+
+class Vermelho {
+    + aplicarCor(): void
+}
+class Azul {
+    + aplicarCor(): void
+}
+
+abstract class Forma {
+    # Cor cor
+    + Forma(Cor cor)
+    + desenhar(): void
+}
+
+class Circulo {
+    + desenhar(): void
+}
+class Quadrado {
+    + desenhar(): void
+}
+
+Cor <|.. Vermelho
+Cor <|.. Azul
+Forma *-- Cor
+Forma <|-- Circulo
+Forma <|-- Quadrado
+@enduml
