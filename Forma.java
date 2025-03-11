@@ -1,12 +1,20 @@
 //classe abstrata de forma
 abstract class Forma {
-    protected Cor cor;
+    private Cor cor;
 
-    public Forma(Cor cor) {
-        this.cor = cor;
+    public Forma (Cor cor) {
+        setCor(cor);
     }
 
-    abstract void desenhar();
+    abstract String desenhar();
+
+    protected Cor getCor() {
+        return cor;
+    }
+
+    protected void setCor(Cor cor) {
+        this.cor = cor;
+    }
 }
 
 //implementação concreta de forma
@@ -15,9 +23,8 @@ class Quadrado extends Forma {
         super(cor);
     }
 
-    public void desenhar() {
-        System.out.println("Desenhando um quadrado");
-        cor.aplicarCor();
+    public String desenhar() {
+        return "Desenhando um quadrado" + getCor().aplicarCor();
     }
 }
 
@@ -26,8 +33,7 @@ class Circulo extends Forma {
         super(cor);
     }
 
-    public void desenhar() {
-        System.out.println("Desenhando um círculo");
-        cor.aplicarCor();
+    public String desenhar() {
+        return "Desenhando um círculo" + getCor().aplicarCor();
     }
 }

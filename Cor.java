@@ -1,16 +1,16 @@
 interface Cor {
-    void aplicarCor();
+    public String aplicarCor();
 }
 
 //implementação conclreta das cores
 class Vermelho implements Cor{
-    public void aplicarCor(){
-        System.out.println("Vermelho");
+    public String aplicarCor(){
+        return " Vermelho";
     }
 }
 
 class Azul implements Cor{
-    public void aplicarCor(){
-        System.out.println("Azul");
+    public String aplicarCor(){
+        return " Azul";
     }
 }
